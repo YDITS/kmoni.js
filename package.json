@@ -1,0 +1,17 @@
+{
+    "name": "kmoni.js",
+    "version": "1.0.0",
+    "description": "A library for handling JSON data provided by the Strong Motion Monitor of the National Research Institute for Earth Science and Disaster Resilience (NIED) in Japan.",
+    "main": "./src/index.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/YDITS/kmoni.js.git"
+    },
+    "author": "Yone",
+    "license": "",
+    "bugs": {
+        "url": "https://github.com/YDITS/kmoni.js/issues"
+    },
+    "homepage": "https://github.com/YDITS/kmoni.js#readme"
+}
