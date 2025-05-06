@@ -8,6 +8,42 @@
 
 ## Usage
 
+### Install Package
+
+```bash
+npm install git+https://github.com/YDITS/kmoni.js.git
+```
+
+### Import Package
+
+TypeScript:
+```ts
+import { KmoniClient } = from "kmoni.js/src/index.js";
+```
+
+JavaScript (Need to Build):
+```js
+import { KmoniClient } = from "kmoni.js/dist/index.js";
+```
+
+## Build
+
+### 1. Install Packages
+
+```bash
+npm install
+```
+
+### 2. Build
+
+Compile to JavaScript
+
+```bash
+npm run build
+```
+
+Emitted JavaScript files will be output to the `dist/` directory.
+
 ## License
 
 Unlicensed.
