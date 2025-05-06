@@ -9,30 +9,37 @@
  */
 
 export class KmoniDateGenerator {
-    constructor() {
-        if (typeof parseInt !== "function") {
-            throw new TypeError("`parseInt` function is not defined.");
-        }
-    }
-
     static generateDateString({ date, delayOffset }: { date: Date, delayOffset?: number }): string {
-        const _date = new Date(date);
-        _date.setHours(_date.getUTCHours() + 9);
+        const jstDate = new Date(date.getTime() + 9 * 60 * 60 * 1000); // JST (UTC+9)
 
         if (delayOffset) {
-            _date.setSeconds(_date.getSeconds() - 2);
+            jstDate.setSeconds(jstDate.getSeconds() - 2);
         }
 
-        return `${_date.getFullYear()}${String(_date.getMonth() + 1).padStart(2, '0')}${String(_date.getDate()).padStart(2, '0')}${String(_date.getHours()).padStart(2, '0')}${String(_date.getMinutes()).padStart(2, '0')}${String(_date.getSeconds()).padStart(2, '0')}`;
+        const pad = (n: number) => String(n).padStart(2, "0");
+
+        return [
+            jstDate.getFullYear(),
+            pad(jstDate.getMonth() + 1),
+            pad(jstDate.getDate()),
+            pad(jstDate.getHours()),
+            pad(jstDate.getMinutes()),
+            pad(jstDate.getSeconds()),
+        ].join("");
     }
 
     static generateDate({ date }: { date: string }) {
-        const year = parseInt(date.slice(0, 4), 10);
-        const month = parseInt(date.slice(4, 6), 10) - 1;
-        const day = parseInt(date.slice(6, 8), 10);
-        const hour = parseInt(date.slice(8, 10), 10);
-        const minute = parseInt(date.slice(10, 12), 10);
-        const second = parseInt(date.slice(12, 14), 10);
+        if (!/^\d{14}$/.test(date)) {
+            throw new Error("Invalid date format. Expected YYYYMMDDHHmmss.");
+        }
+
+        const year = Number(date.slice(0, 4));
+        const month = Number(date.slice(4, 6)) - 1;
+        const day = Number(date.slice(6, 8));
+        const hour = Number(date.slice(8, 10));
+        const minute = Number(date.slice(10, 12));
+        const second = Number(date.slice(12, 14));
+
         return new Date(year, month, day, hour, minute, second);
     }
 }
