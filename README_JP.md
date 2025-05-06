@@ -4,7 +4,7 @@
 
 ## 概要
 
-**Kmoni.js** は、防災科学技術研究所（NIED）が提供する強震モニタのJSONデータを扱うJavaScriptライブラリです。
+**Kmoni.js** は、[防災科学技術研究所（NIED）](https://www.bosai.go.jp/)が提供する強震モニタのJSONデータを扱うJavaScriptライブラリです。
 
 ## 利用方法
 
