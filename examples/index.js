@@ -14,7 +14,7 @@ let KmoniData = null;
 try {
     ({ KmoniClient, KmoniData } = await import("../dist/index.js"));
 } catch (error) {
-    console.error("Error: Could not found the KmoniClient module.\nPlease build the project with `npm run build`.");
+    console.error("Error: Failed to load the Kmoni module.\nPlease ensure the project is built by running `npm run build`.");
     process.exit(1);
 }
 
@@ -24,40 +24,35 @@ class Example {
 
         this.#kmoniClient.startPolling({
             intervalMs: 1000,
-            loop: (data) => this.mainloop(data),
-            onError: (error) => this.onError(error),
+            loop: this.handleData.bind(this),
+            onError: this.handleError.bind(this),
         });
     }
 
     /**
-     * @param {KmoniData} data 
-     * @returns {void}
+     * @param {KmoniData} data
      */
-    mainloop(data) {
+    handleData(data) {
         if (!(data instanceof KmoniData)) {
-            console.error("Invalid data type:", data);
+            console.error("Invalid data type received:", data);
             return;
         }
 
-        console.log(JSON.stringify(data));
+        console.log(JSON.stringify(data, null, 2));
     }
 
     /**
-     * @param {Error} error 
-     * @returns {void}
+     * @param {Error} error
      */
-    onError(error) {
-        if (error instanceof Error) {
-            console.error("Polling error:", error.message);
-        } else {
-            console.error("Polling error:", error);
-        }
+    handleError(error) {
+        const message = error instanceof Error ? error.message : String(error);
+        console.error("Polling error:", message);
     }
 
     /**
-     * @type {KmoniClient | null}
+     * @type {KmoniClient}
      */
-    #kmoniClient = null;
+    #kmoniClient;
 }
 
 new Example();
