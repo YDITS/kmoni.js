@@ -11,11 +11,10 @@
 import { KmoniDateGenerator } from "./kmoni-date-generator.js";
 
 export class KmoniUrlGenerator {
-    constructor() { }
+    static readonly BASE_URL = "https://www.lmoni.bosai.go.jp/monitor/webservice/hypo/eew/";
 
     static generateUrl({ date, delayOffset }: { date: Date, delayOffset?: number }): URL {
-        const targetDate: Date = new Date(date);
-        const formatedTargetDate: string = KmoniDateGenerator.generateDateString({ date: targetDate, delayOffset: delayOffset });
-        return new URL(`https://www.lmoni.bosai.go.jp/monitor/webservice/hypo/eew/${formatedTargetDate}.json`);
+        const formattedDate = KmoniDateGenerator.generateDateString({ date, delayOffset });
+        return new URL(`${KmoniUrlGenerator.BASE_URL}${formattedDate}.json`);
     }
 }
