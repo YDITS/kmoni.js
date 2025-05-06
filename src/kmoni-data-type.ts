@@ -1,8 +1,10 @@
 /**!
  * 
- * Kmoni.js
+ * kmoni.js
  * 
  * Copyright (C) よね/Yone
+ * 
+ * Licensed under the MIT License.
  * 
  */
 

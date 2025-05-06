@@ -4,6 +4,8 @@
  * 
  * Copyright (C) よね/Yone
  * 
+ * Licensed under the MIT License.
+ * 
  */
 
 import { KmoniDataType } from "./kmoni-data-type.js";

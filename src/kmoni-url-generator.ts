@@ -4,6 +4,8 @@
  * 
  * Copyright (C) よね/Yone
  * 
+ * Licensed under the MIT License.
+ * 
  */
 
 import { KmoniDateGenerator } from "./kmoni-date-generator.js";
