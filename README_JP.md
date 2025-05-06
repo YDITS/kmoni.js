@@ -21,7 +21,7 @@ TypeScript:
 import { KmoniClient } = from "kmoni.js/src/index.js";
 ```
 
-JavaScript (ビルドが必要):
+JavaScript (ビルド後):
 ```js
 import { KmoniClient } = from "kmoni.js/dist/index.js";
 ```
