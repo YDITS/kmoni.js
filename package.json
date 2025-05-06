@@ -12,7 +12,7 @@
         "url": "git+https://github.com/YDITS/kmoni.js.git"
     },
     "author": "Yone",
-    "license": "",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/YDITS/kmoni.js/issues"
     },
