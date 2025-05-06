@@ -12,25 +12,29 @@ import { KmoniDataType } from "./kmoni-data-type.js";
 import { KmoniDateGenerator } from "./kmoni-date-generator.js";
 
 export class KmoniData {
-    constructor(data: any) {
-        this.data = data;
+    constructor(data: KmoniDataType) {
+        this._data = data;
     }
 
-    data: KmoniDataType;
+    private _data: KmoniDataType;
 
     get isSuccess(): boolean {
-        return this.data.result.status === "success";
+        return this._data.result?.status === "success";
     }
 
     get reportTime(): Date {
-        return KmoniDateGenerator.generateDate({ date: this.data.report_time });
+        return KmoniDateGenerator.generateDate({ date: this._data.report_time });
     }
 
     get requestTime(): Date {
-        return KmoniDateGenerator.generateDate({ date: this.data.request_time });
+        return KmoniDateGenerator.generateDate({ date: this._data.request_time });
     }
 
     get originTime(): Date {
-        return KmoniDateGenerator.generateDate({ date: this.data.origin_time });
+        return KmoniDateGenerator.generateDate({ date: this._data.origin_time });
+    }
+
+    get data(): KmoniDataType {
+        return this._data;
     }
 }

@@ -49,7 +49,7 @@ export class KmoniClient {
         this.lastFetchDate = new Date();
 
         const jsonData = await response.json();
-        return new KmoniData({ data: jsonData });
+        return new KmoniData(jsonData);
     }
 
     startPolling({
