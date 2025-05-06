@@ -46,6 +46,6 @@ npm run build
 
 ## ライセンス
 
-ライセンスなし。
+[MIT License](./LICENSE) のもとでライセンスされます。
 
 Copyright (C) よね/Yone
