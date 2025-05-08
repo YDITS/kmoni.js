@@ -4,7 +4,7 @@
 
 ## Overview
 
-**Kmoni.js** is a JavaScript library for handling JSON data provided by the Strong Motion Monitor of [the National Research Institute for Earth Science and Disaster Resilience (NIED)](https://www.bosai.go.jp/) in Japan.
+**Kmoni.js** is a TypeScript/JavaScript library for handling JSON data provided by the Strong Motion Monitor of [the National Research Institute for Earth Science and Disaster Resilience (NIED)](https://www.bosai.go.jp/) in Japan.
 
 ## Usage
 
