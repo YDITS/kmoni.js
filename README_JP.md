@@ -48,4 +48,4 @@ npm run build
 
 [MIT License](./LICENSE) のもとでライセンスされます。
 
-Copyright (C) よね/Yone
+Copyright &copy; よね/Yone
