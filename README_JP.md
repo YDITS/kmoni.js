@@ -18,7 +18,7 @@ npm install git+https://github.com/YDITS/kmoni.js.git
 
 TypeScript:
 ```ts
-import { KmoniClient } = from "kmoni.js/src/index.js";
+import { KmoniClient } = from "kmoni.js";
 ```
 
 JavaScript (ビルド後):
